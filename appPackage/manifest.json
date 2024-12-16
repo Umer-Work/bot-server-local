@@ -1,0 +1,83 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.17/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.17",
+  "version": "1.0.2",
+  "id": "${{TEAMS_APP_ID}}",
+  "developer": {
+    "name": "Umer Karachiwala",
+    "websiteUrl": "https://www.example.com",
+    "privacyUrl": "https://www.example.com/privacy",
+    "termsOfUseUrl": "https://www.example.com/termofuse"
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "name": {
+    "short": "bot-server-local",
+    "full": "full name for bot-server-local"
+  },
+  "description": {
+    "short": "short description for bot-server-local",
+    "full": "full description for bot-server-local"
+  },
+  "accentColor": "#FFFFFF",
+  "bots": [
+    {
+      "botId": "${{BOT_ID}}",
+      "scopes": ["personal", "team", "groupChat"],
+      "supportsFiles": false,
+      "isNotificationOnly": false,
+      "commandLists": [
+        {
+          "scopes": ["personal", "team", "groupChat"],
+          "commands": [
+            {
+              "title": "Hi",
+              "description": "Say hi to the bot."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "composeExtensions": [],
+  "configurableTabs": [],
+  "staticTabs": [],
+  "permissions": ["identity", "messageTeamMembers"],
+  "validDomains": ["efc7-115-96-27-193.ngrok-free.app"],
+  "authorization": {
+    "permissions": {
+      "resourceSpecific": [
+        {
+          "name": "Calls.JoinGroupCalls.Chat",
+          "type": "Application"
+        },
+        {
+          "name": "OnlineMeetingRecording.Read.Chat",
+          "type": "Application"
+        },
+        {
+          "name": "OnlineMeetingParticipant.Read.Chat",
+          "type": "Application"
+        },
+        {
+          "name": "OnlineMeetingAudioVideo.Stream.Chat",
+          "type": "Delegated"
+        },
+        {
+          "name": "MeetingParticipantReaction.Read.Chat",
+          "type": "Delegated"
+        },
+        {
+          "name": "OnlineMeetingActiveSpeaker.Read.Chat",
+          "type": "Delegated"
+        },
+        {
+          "name": "OnlineMeetingIncomingAudio.Detect.Chat",
+          "type": "Delegated"
+        }
+      ]
+    }
+  }
+}
